@@ -9,7 +9,7 @@ class NetworkInterface{
      ~NetworkInterface();
      //establish conn to the vpn server
 //CLIENT SIDE
-     bool connectToServer();
+     bool connectToServer() noexcept(false);
      //Disconn from vpn server
      void disconnectFromServer();
      //read data from the virtual network interface
@@ -17,14 +17,14 @@ class NetworkInterface{
      void writeToInterface();
      //write data to the virtual network interface
      //read data from the server
-     string readFromServer();
+     std::string readFromServer() noexcept(false);
 
      //write data to the server
      void writeToServer();
 
 //SERVER SIDE
      //read data from a client 
-     string readFromCLient();
+     std::string readFromCLient();
 
      //wrote data tp client 
      void writeToClient();
@@ -34,6 +34,16 @@ int server_socket;
 int client_socket;
 bool isConnected;
 
+struct NetworkError {
+    int code;
+    std::string message;
+};
+
+static constexpr size_t MAX_BUFFER_SIZE = 8192;
+
+void setTimeout(int seconds);
+
+bool isConnectionActive() const;
 
 };
 #endif;

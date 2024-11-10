@@ -6,20 +6,21 @@ using namespace std;
 KeyExchange::KeyExchange(){
      //Initializing random for generating keys
      srand(time(NULL));
-     sharedSecretKey = generateSharedSecretKey()
-
+     sharedSecretKey = generateSharedSecretKey();
 }
-bool KeyExchange::performKeyExchange(const string&serverAddr){
 
+bool KeyExchange::performKeyExchange(const string& serverAddr){
+     return true;
 }
+
 bool KeyExchange::performKeyExchange(int clientSocket){
-
-
+     return true;
 }
+
 string KeyExchange::getSharedSecretKey() const{
      return sharedSecretKey;
-
 }
-string KeyExchange::generateSharedSecretKey(){
 
+string KeyExchange::generateSharedSecretKey(){
+     return "test_key"; 
 }

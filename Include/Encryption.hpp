@@ -3,16 +3,31 @@
 
 #include <string>
 
-class Encryption{
-     public:
-     Encryption();
-     string encryptData(const string& data);
-     string decryptData(const string& data);
+class Encryption
+{
+public:
+     enum class Algorithm
+     {
+          XOR,
+          AES256,
+          ChaCha20
+     };
 
-     private:
-     //generate a random key
+     // Add initialization vector support
+     void setIV(const std::string &iv);
+
+     // Add key rotation support
+     void rotateKey();
+
+     // Add encryption strength validation
+     bool validateKeyStrength() const;
+     Encryption();
+     string encryptData(const string &data);
+     string decryptData(const string &data);
+
+private:
+     // generate a random key
      string key;
-     string xorEncryptDecrypt(const string& data, const string& key);
-     
+     string xorEncryptDecrypt(const string &data, const string &key);
 };
 #endif

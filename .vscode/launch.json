@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kunal/OneDrive/CODE FOR LIFE/BuildFromScratch/VPN from scratch/VPNCLient",
-      "program": "c:/Users/kunal/OneDrive/CODE FOR LIFE/BuildFromScratch/VPN from scratch/VPNCLient/build/Debug/outDebug",
+      "cwd": "c:/Users/kunal/OneDrive/CODE FOR LIFE/BuildFromScratch/VPN from scratch/Include",
+      "program": "c:/Users/kunal/OneDrive/CODE FOR LIFE/BuildFromScratch/VPN from scratch/Include/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

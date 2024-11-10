@@ -5,8 +5,22 @@
 
 class Authentication {
 public:
-    bool authenticateClient(const std::string& username, const std::string& password);
-    bool authenticateClient(int clientSocket);
+    // Add virtual destructor for base class
+    virtual ~Authentication() = default;
+    
+    // Add return type for authentication status
+    struct AuthResult {
+        bool success;
+        std::string message;
+    };
+    
+    // Make methods virtual to allow different authentication strategies
+    virtual AuthResult authenticateClient(const std::string& username, const std::string& password);
+    virtual AuthResult authenticateClient(int clientSocket);
+    
+private:
+    // Add member variables for storing authentication state
+    bool isAuthenticated = false;
 };
 
 #endif // AUTHENTICATION_H
